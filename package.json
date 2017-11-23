@@ -1,0 +1,27 @@
+{
+  "name": "rockk3r-backend-test",
+  "version": "1.0.0",
+  "description": "Rockk3r Labs Test for backend developer",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js",
+    "start-watch": "nodemon --exec \"node server/server.js\""
+  },
+  "author": "Alejandro Molina Vergel",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jquery": "^3.2.1",
+    "jsonwebtoken": "^8.1.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.19.2",
+    "mongoose": "^4.13.4",
+    "nodemon": "^1.12.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "validator": "^9.1.1"
+  }
+}
