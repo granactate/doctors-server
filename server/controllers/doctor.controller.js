@@ -3,10 +3,10 @@ const Doctor = require("./../models/doctor.model");
 const _ = require('lodash');
 function DoctorController()
 {
-    let currentUser = constants.current_user_logged;
+    
     this.get = function (req, res)
     {
-
+        let currentUser = req.currentUser
         let params = {}
         if (currentUser.type === 1)
         {
@@ -35,6 +35,7 @@ function DoctorController()
     }
     this.update = function (req, res)
     {
+        let currentUser = req.currentUser
         if (!req.body._id)
         {
             return res.status(404).send({status: 0, description: "Doctor wasnt found", data: null})

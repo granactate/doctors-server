@@ -4,9 +4,10 @@ const _ = require("lodash");
 function GlucosaController()
 {
 
-    let currentUser = constants.current_user_logged;
+
     this.addOrUpdate = function (req, res)
     {
+        let currentUser = req.currentUser
         //patient ID
         let params = {_id: req.body._id};
         if (currentUser.type === 1)

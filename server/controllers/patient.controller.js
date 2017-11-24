@@ -4,9 +4,10 @@ const moment = require('moment');
 const _ = require("lodash")
 function PatientController()
 {
-    let currentUser = constants.current_user_logged;
+
     this.getPatient = function (req, res)
     {
+        let currentUser = constants.current_user_logged;
         let params = {};
         //if app query then get only it patient
         if (currentUser.type == 2)

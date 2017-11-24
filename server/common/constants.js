@@ -17,5 +17,6 @@ let app = {
 }
 
 module.exports = {
-    current_user_logged: doctor
+    current_user_logged: doctor,
+    SECRET: "Eliecer Alejandro Molina Vergel"
 }

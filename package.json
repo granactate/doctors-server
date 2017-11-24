@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/server.js",
-    "start-watch": "nodemon --exec \"node server/server.js\""
+    "start-watch": "nodemon --exec \"node server/server.js\"",
+    "create-data": "node server/database/init.js"
   },
   "author": "Alejandro Molina Vergel",
   "license": "ISC",

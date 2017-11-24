@@ -1,5 +1,10 @@
 # doctors-server
 
+##Instalación
+
+1. npm install .
+2. npm start
+3. npm run-script create-data
 
 se requiere los crud necesarios para poder completar los siguientes requerimientos se necesita administrar doctores, pacientes y mediciones de glucosa , teniendo en cuenta la siguientes restricciones existen 3 tipos de usuarios que usaran el api 
 

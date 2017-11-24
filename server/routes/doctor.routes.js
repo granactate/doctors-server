@@ -23,10 +23,11 @@ const authorize = {
     },
 }
 const authResources = require("../middleware/authResources.middleware")(authorize)
+const authMiddleware = require("./../middleware/auth.middleware");
 
-router.get("/", authResources, DoctorController.get)
-router.post("/", authResources, DoctorController.add)
-router.put("/", authResources, DoctorController.update)
-router.delete("/", authResources, DoctorController.delete)
+router.get("/", authMiddleware(true), authResources, DoctorController.get)
+router.post("/", authMiddleware(true), authResources, DoctorController.add)
+router.put("/", authMiddleware(true), authResources, DoctorController.update)
+router.delete("/", authMiddleware(true), authResources, DoctorController.delete)
 
 module.exports = router;

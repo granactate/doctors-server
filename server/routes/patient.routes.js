@@ -30,13 +30,14 @@ const authorize = {
         ]
     },
 }
+const authMiddleware = require("./../middleware/auth.middleware");
 const authResources = require("../middleware/authResources.middleware")(authorize)
 
-router.get("/", authResources, PatientController.getPatient)
-router.post("/", authResources, PatientController.add)
-router.put("/", authResources, PatientController.update)
-router.delete("/", authResources, PatientController.delete)
+router.get("/", authMiddleware(true), authResources, PatientController.getPatient)
+router.post("/", authMiddleware(true), authResources, PatientController.add)
+router.put("/", authMiddleware(true), authResources, PatientController.update)
+router.delete("/", authMiddleware(true), authResources, PatientController.delete)
 
 //EPS FOR GLUCOSA
-router.post("/glucosa/", authResources, GlucosaController.addOrUpdate)
+router.post("/glucosa/", authMiddleware(true), authResources, GlucosaController.addOrUpdate)
 module.exports = router;
