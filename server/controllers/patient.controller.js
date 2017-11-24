@@ -7,7 +7,7 @@ function PatientController()
 
     this.getPatient = function (req, res)
     {
-        let currentUser = constants.current_user_logged;
+        let currentUser = req.currentUser
         let params = {};
         //if app query then get only it patient
         if (currentUser.type == 2)
@@ -30,6 +30,7 @@ function PatientController()
 
     this.add = function (req, res)
     {
+        let currentUser = req.currentUser
         if (currentUser.type === 1 && !currentUser._id)
         {
             return res.status(400).send({status: -2, description: "Doctor id wasn not specified", data: currentUser})
@@ -56,6 +57,7 @@ function PatientController()
 
     this.update = function (req, res)
     {
+        let currentUser = req.currentUser
         let params = {_id: req.body._id}
         if (!params._id)
         {
@@ -84,6 +86,7 @@ function PatientController()
     }
     this.delete = function (req, res)
     {
+        let currentUser = req.currentUser
         if (!req.body._id)
         {
             return res.status(404).send({status: 0, description: "Patient wasnt found", data: null})
