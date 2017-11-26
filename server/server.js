@@ -8,6 +8,7 @@ const app = express();
 
 app.use(express.static(public))
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/auth", require("./routes/auth.routes"))
 app.use("/doctor", require("./routes/doctor.routes"))
 app.use("/patient", require("./routes/patient.routes"))

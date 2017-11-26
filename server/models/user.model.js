@@ -58,7 +58,7 @@ UserSchema.statics.findByCredentials = function (credentials)
     return User.findOne({email: credentials.email})
             .then((user) => {
                 return !user ? null : bcrypt.compare(credentials.password, user.password).then((result) => {
-                    console.log(credentials.password, user.password, result)
+                    // console.log(credentials.password, user.password, result)
                     return result ? user : null;
                 })
             })
